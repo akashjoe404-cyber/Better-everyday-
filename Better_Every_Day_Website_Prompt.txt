@@ -1,0 +1,403 @@
+Website Name
+Better Every Day
+Tagline
+Small habits. Better days. Better you.
+
+1. Main Purpose
+Build a daily self-improvement reminder website that helps users develop good habits, communication skills, cleanliness, learning, reading, exercise, and daily reflection.
+
+The website must have 10 daily activities:
+1. Limit your screen time.
+2. Learn something new.
+3. Read for 10 minutes.
+4. Practice speaking English.
+5. Learn 5 new words.
+6. Listen carefully when others speak.
+7. Speak politely with everyone.
+8. Keep your surroundings clean.
+9. Exercise for 30 minutes.
+10. Reflect on your day before sleeping.
+
+2. Dashboard
+Create a beautiful dashboard with:
+- Website logo/name: Better Every Day
+- Today's date
+- Day of the week
+- Greeting: “Good Morning, Joe 👋”
+- Motivational subtitle
+- Today's completion percentage
+- Completed tasks / total tasks
+- Progress bar
+- Current streak
+- Total completed activities
+
+Example:
+Friday, September 18, 2026
+Today's Progress
+6 / 10 Completed
+60%
+
+3. Task Cards
+Display all 10 activities as attractive cards.
+
+Each card should contain:
+- Number
+- Activity title
+- Small relevant icon
+- Checkbox / Complete button
+- Completion status
+
+When a task is completed:
+- Change the card background color.
+- Change the border color.
+- Show a ✓ checkmark.
+- Change the text appearance slightly.
+- Update completed task count.
+- Update progress percentage.
+- Update progress bar.
+- Save the completed status to the backend/database.
+
+When incomplete:
+- Show the normal card design.
+- The completion state must remain saved even after refreshing the page.
+
+4. Date System
+The website must show the real current date automatically.
+Every day's activities must be tracked separately.
+
+For example:
+September 18 → 7/10 completed
+September 19 → 4/10 completed
+September 20 → 10/10 completed
+
+Do not mix progress between different dates.
+
+When a new day starts:
+- Create a new daily activity record.
+- Start the new day's progress at 0/10.
+- Keep previous days' data safely stored.
+- Allow users to view previous dates.
+
+5. Calendar & History
+Create a History section with a calendar.
+
+Users can select any previous date and see:
+- Date
+- Completed activities
+- Incomplete activities
+- Completion percentage
+- Daily score
+
+Use visual indicators:
+🟢 Fully completed
+🟡 Partially completed
+⚪ No activity
+
+When a date is selected, display that day's 10 activities and their completion status.
+
+6. Progress Calculation
+Automatically calculate:
+
+Completion Percentage = Completed Activities ÷ 10 × 100
+
+Examples:
+1/10 = 10%
+5/10 = 50%
+8/10 = 80%
+10/10 = 100%
+
+Update the calculation instantly whenever a task is checked or unchecked.
+
+7. Streak System
+Create a working daily streak system.
+
+Display:
+🔥 Current Streak
+🏆 Longest Streak
+📅 Active Days
+✅ Total Completed Activities
+
+A day counts as a fully completed day when all 10 activities are completed.
+
+Calculate consecutive completed days correctly using calendar dates.
+
+8. Design & Visual Style
+Make the website look premium, clean, modern and motivating.
+
+Color Theme:
+- Deep navy / dark background
+- White and soft-gray text
+- Blue/purple accent colors
+- Green for completed activities
+- Soft yellow/orange for streaks
+- Subtle gradients
+- Do not use too many bright colors.
+
+Completed task cards should have a clear green success state.
+
+Fonts:
+- Inter for normal UI text
+- Poppins for headings
+
+Use:
+- Bold headings
+- Medium-weight task titles
+- Small muted secondary text
+- Large numbers for progress statistics
+- Maintain excellent readability on mobile.
+
+9. Animations
+Add smooth but subtle animations.
+
+Examples:
+- Task completion animation
+- Checkmark animation
+- Progress bar animation
+- Card hover effect
+- Button hover effect
+- Page transitions
+- Streak animation
+
+Do not overuse animations.
+The website should feel professional, not like a game.
+
+10. Frontend
+Use:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+
+Create reusable components such as:
+- Navbar
+- Dashboard
+- TaskCard
+- ProgressCard
+- StreakCard
+- Calendar
+- History
+- Statistics
+- Footer
+- Login
+- Register
+
+Make the entire website fully responsive.
+It must work beautifully on:
+- Mobile
+- Tablet
+- Desktop
+
+Mobile should be treated as a priority because users will mainly use the reminder website from their phone.
+
+11. Backend
+Use:
+- Node.js
+- Express.js
+- TypeScript
+
+Create a proper REST API.
+
+Suggested endpoints:
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/logout
+GET /api/tasks
+GET /api/tasks/today
+GET /api/progress/today
+PUT /api/tasks/:taskId/complete
+PUT /api/tasks/:taskId/uncomplete
+GET /api/history/:date
+GET /api/history
+GET /api/statistics
+GET /api/streak
+
+12. Database
+Use PostgreSQL.
+
+Create tables such as:
+
+users
+- id
+- name
+- email
+- password_hash
+- created_at
+
+tasks
+- id
+- task_number
+- task_text
+- created_at
+
+daily_tasks
+- id
+- user_id
+- task_id
+- date
+- completed
+- completed_at
+
+Use proper:
+- Primary keys
+- Foreign keys
+- Unique constraints
+- Indexes
+
+Make sure each user's progress is separated from other users.
+Never store passwords as plain text. Hash passwords securely.
+
+13. Authentication
+Create:
+
+Register fields:
+- Name
+- Email
+- Password
+- Confirm Password
+
+Login fields:
+- Email
+- Password
+
+After login, redirect the user to the dashboard.
+Only authenticated users should be able to access their personal progress and history.
+
+14. Statistics
+Create a beautiful Statistics page.
+
+Display:
+- Today's progress
+- Weekly progress
+- Monthly progress
+- Current streak
+- Longest streak
+- Total completed tasks
+- Total active days
+
+Add simple charts for weekly/monthly progress.
+
+Example:
+Monday — 70%
+Tuesday — 90%
+Wednesday — 50%
+Thursday — 100%
+Friday — 60%
+
+15. Daily Motivation
+Display a small motivational message on the dashboard.
+
+Examples:
+“Small progress is still progress.”
+“Build better habits, one day at a time.”
+“Your daily actions shape your future.”
+“Learn something. Do something. Improve something.”
+
+Rotate the message daily.
+
+16. Dark / Light Mode
+Add a theme toggle.
+
+🌙 Dark Mode
+☀️ Light Mode
+
+The entire interface should smoothly switch between themes.
+Save the user's theme preference.
+
+17. Important Working Requirement
+This must NOT be a static frontend demo.
+
+The complete flow must work:
+
+User clicks Complete
+↓
+React Frontend
+↓
+REST API
+↓
+Express Backend
+↓
+PostgreSQL Database
+↓
+Saved completion status
+↓
+Frontend updates progress
+
+When the user refreshes the website, the saved completion status must still appear.
+
+18. User Experience
+The website should feel like a real productivity application.
+
+The dashboard should immediately answer:
+- What day is today?
+- What should I do today?
+- How many tasks have I completed?
+- What percentage have I completed?
+- How long is my streak?
+- How did I perform on previous days?
+
+Keep the interface simple and easy to understand.
+
+19. Error & Loading States
+Implement:
+- Loading indicators
+- API error handling
+- Login validation
+- Registration validation
+- Empty history state
+- Database/API failure messages
+- Network error handling
+
+Never expose database credentials or sensitive backend information to the frontend.
+Use environment variables for secrets.
+
+20. Project Structure
+Create a professional project structure:
+
+frontend/
+backend/
+database/
+components/
+pages/
+services/
+controllers/
+routes/
+models/
+middleware/
+utils/
+hooks/
+types/
+
+Include:
+- .env.example
+- Database schema/migrations
+- API documentation
+- README
+- Setup instructions
+
+21. Final Result
+The final website should look like a real premium productivity/habit-tracking application, not a basic student project.
+
+It must have:
+✓ Beautiful colors
+✓ Modern fonts
+✓ Responsive design
+✓ Today's date
+✓ 10 daily activities
+✓ Task completion
+✓ Automatic color change
+✓ Checkmark animation
+✓ Automatic percentage calculation
+✓ Progress bar
+✓ Daily history
+✓ Calendar
+✓ Statistics
+✓ Streak tracking
+✓ Login/Register
+✓ Backend API
+✓ PostgreSQL database
+✓ Persistent data
+✓ Dark/Light mode
+✓ Mobile-first design
+
+Make every feature fully functional and connected to the backend.
